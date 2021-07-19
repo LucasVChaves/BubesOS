@@ -8,6 +8,8 @@
 
 ## How to build
 
+-> You will need Docker and Qemu in your system.  
+
 -> Download the files or clone the repository.  
 -> Create a docker image with `docker build buildenv -t bubesos-buildenv`.  
 -> Run the image with `docker run --rm -it -v %cd%:/root/env bubesos-buildenv` on cmd or `docker run --rm -it -v "$(PWD)":/root/envex bubesos-buildenv` on bash.  
@@ -19,4 +21,6 @@
 -> Currently it only starts and shows a startup message in the screen.  
 -> I plan to add bash-like commands, sound, networking, and basic tools like a shell, calculator, vim-like text editor, simple games (maybe chess or tetris idk), etc.  
 -> The project is kinda dead right now, but I plan to maintain it on the future.  
--> The imediate feature to add is keyboard support and a basic shell.  
+-> The imediate feature is to fix the keyboard support.  
+ : *So, basically when I use the shift for uppercase it just locks and I can't get to lowercase again, and capslock just prints a smile and an S for some shitty & unkown reason.*  
+-> Next thing is to add a basic shell.
