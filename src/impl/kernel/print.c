@@ -192,7 +192,7 @@ void test_input()
     }
     else if (keycode == KEY_LEFT_SHIFT_PRESS)
     {
-      //print_str("LEFT SHIFT");
+      print_str("LEFT SHIFT");
       shift = true;
     }
     else if (keycode == KEY_LEFT_CTRL_PRESS)
@@ -207,7 +207,7 @@ void test_input()
     }
     else if (keycode == KEY_LEFT_SHIFT_RELEASE)
     {
-      //print_str("LEFT SHIFT UP");
+      print_str("LEFT SHIFT UP");
       shift = false;
     }
     else if (keycode == KEY_LEFT_CTRL_RELEASE)
@@ -217,7 +217,7 @@ void test_input()
     }
     else if (keycode == KEY_CAPS_LOCK_PRESS)
     {
-      //print_str("CAPS LOCK");
+      print_str("CAPS LOCK");
       capslock = !capslock;
       print_str((char)capslock);
     }
@@ -225,7 +225,6 @@ void test_input()
     {
       if (capslock || shift)
       {
-        //we're capitalized
         ch = get_ascii_char(keycode);
       }
       else
@@ -238,28 +237,6 @@ void test_input()
     sleep(0x02FFFFFF);
   } while (ch > 0);
 }
-/*
-char return_input()
-{
-  static int MAX_INPUT_LEN = 20;
-  char ch = 0;
-  char chs[MAX_INPUT_LEN];
-  char keycode = 0;
-  for (size_t i = 0; i < MAX_INPUT_LEN; i++)
-  {
-    if(keycode == KEY_ENTER){
-      print_newline();
-      return chs;
-    }else{
-      ch = get_ascii_char(keycode);
-      print_char(ch);
-      chs[i] = ch;
-    }
-    sleep(0x02FFFFFF);
-  }
-  return chs;
-  
-}*/
 
 void print_set_color(uint8_t foreground, uint8_t background)
 {

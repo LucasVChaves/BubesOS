@@ -8,13 +8,20 @@
 
 ## How to build
 
--> You will need Docker and Qemu in your system.  
+-> You will need a text editor (I use [vscode](https://code.visualstudio.com)), [Docker](https://www.docker.com) and [Qemu](https://www.qemu.org/download/) in your system.  
 
 -> Download the files or clone the repository.  
 -> Create a docker image with `docker build buildenv -t bubesos-buildenv`.  
--> Run the image with `docker run --rm -it -v %cd%:/root/env bubesos-buildenv` on cmd or `docker run --rm -it -v "$(PWD)":/root/envex bubesos-buildenv` on bash.  
--> Make it with makefile: `make build-x86_64`.  
--> Run with [QEMU](https://www.qemu.org/download/): `qemu-system-x86_64 -cdrom dist/x86_64/kernel.iso`.  
+-> Run the image with `docker run --rm -it -v %cd%:/root/env bubesos-buildenv` on cmd, `docker run --rm -it -v "${pwd}:/root/env" myos-buildenv` on powershell or `docker run --rm -it -v "$(PWD)":/root/envex bubesos-buildenv` on bash.  
+-> If you're using `WSL`, `msys2` or `git bash` use the bash command.   
+-> Make it with makefile: `make build-x86_64` inside the docker container.
+-> Close it with the `exit` command.  
+-> Run with Qemu: `qemu-system-x86_64 -cdrom dist/x86_64/kernel.iso`.  
+-> Make sure you have Qemu [added to your path](https://dev.to/whaleshark271/using-qemu-on-windows-10-home-edition-4062#:~:text=2.-,Add%20Qemu%20path%20to%20environment%20variables%20settings,-Copy%20the%20Qemu).  
+
+-> Note: Every time you make a change to `kernel.iso`, close the Qemu VM before compiling, otherwise errors may appear.  
+
+*If you have any problems with the building and emulating procedure read [this](https://github.com/davidcallanan/os-series/blob/master/README.md) from the original dev.*
 
 ## Devlog | TODOs
 
