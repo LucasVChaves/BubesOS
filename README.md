@@ -1,5 +1,7 @@
 # BubesOS
 
+## Note: This project was discontinued, you can fiddle around as you wish  
+
 ## What is it
 
 -> A personal project that aims to develop a Operational System from scratch.  
@@ -12,7 +14,7 @@
 
 -> Download the files or clone the repository.  
 -> Create a docker image with `docker build buildenv -t bubesos-buildenv`.  
--> Run the image with `docker run --rm -it -v %cd%:/root/env bubesos-buildenv` on cmd, `docker run --rm -it -v "${pwd}:/root/env" myos-buildenv` on powershell or `docker run --rm -it -v "$(PWD)":/root/envex bubesos-buildenv` on bash.  
+-> Run the image with `docker run --rm -it -v %cd%:/root/env bubesos-buildenv` on cmd, `docker run --rm -it -v "${pwd}:/root/env" bubesos-buildenv` on powershell or `docker run --rm -it -v "$(PWD)":/root/envex bubesos-buildenv` on bash.  
 -> If you're using `WSL`, `msys2` or `git bash` use the bash command.   
 -> Make it with makefile: `make build-x86_64` inside the docker container.
 -> Close it with the `exit` command.  
